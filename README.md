@@ -4,11 +4,13 @@ Tracking daily snowpack depth at
 [Pinkham Notch](https://appalachiantrail.com/20130607/amcs-pinkham-notch-visitor-center/)
 and other stations in the white mountains. 
 
-Authors: [@nicknish2](https://github.com/nicknish2) and Milan Klöwer (@milankl), MIT.
+Authors: [@nicknish2](https://github.com/nicknish2) and Milan Klöwer ([@milankl](https://github.com/milankl)), MIT.
 
 ## Data
 
-The data is from [NOAA] as published [here](https://www.nohrsc.noaa.gov/nsa/discussions_text/Northeast/snowdepth/).
+The data is from NOAA's
+[National Operational Hydrological Remote Sensing Center](https://www.nohrsc.noaa.gov/)
+as published [here](https://www.nohrsc.noaa.gov/nsa/discussions_text/Northeast/snowdepth/).
 Recent years are copied into this repository.
 Data is found as `.txt` files in [data/2024](https://github.com/nicknish2/PinkSnow/tree/main/data/2024)
 for the year 2024. Historical data is in
