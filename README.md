@@ -8,11 +8,13 @@ Authors: [@nicknish2](https://github.com/nicknish2) and Milan Klöwer (@milankl)
 
 ## Data
 
-The data is from [NOAA] as published [here](https://www.nohrsc.noaa.gov/nsa/discussions_text/Northeast/snowdepth/),
+The data is from [NOAA] as published [here](https://www.nohrsc.noaa.gov/nsa/discussions_text/Northeast/snowdepth/).
 Recent years are copied into this repository.
-Data is found as `.txt` files in [data/2024](https://github.com/nicknish2/pinkhamSnowpack/tree/main/data/2024)
-for the year 2024. Historical data is in [data/historical] and used to plot the climatology.
+Data is found as `.txt` files in [data/2024](https://github.com/nicknish2/PinkSnow/tree/main/data/2024)
+for the year 2024. Historical data is in
+[data/historical](https://github.com/nicknish2/PinkSnow/tree/main/data/historical)
+and used to plot the climatology.
 
 ## Visualization
 
-Data is visualized in [`plot/images`](https://github.com/nicknish2/pinkhamSnowpack/tree/main/plot/images).
+Data is visualized in [`plot/images`](https://github.com/nicknish2/PinkSnow/tree/main/plot/images).
