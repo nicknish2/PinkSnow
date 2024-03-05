@@ -2,7 +2,19 @@
 
 Tracking daily snowpack depth at
 [Pinkham Notch](https://appalachiantrail.com/20130607/amcs-pinkham-notch-visitor-center/)
-and other stations in the white mountains. 
+and other stations in the white mountains. We currently track
+
+- Hermit Lake 
+- Mt Washington
+- Harvard Cabin
+- Carter Notch
+- Zealand Falls Hut
+- Lonesome Lake Hut
+- Groton
+- Crawford Noth
+- Pinkham Notch
+- Jackson
+- Mt Mansfield
 
 Authors: [@nicknish2](https://github.com/nicknish2) and Milan Klöwer ([@milankl](https://github.com/milankl)), MIT.
 
