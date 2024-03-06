@@ -16,7 +16,7 @@ and other stations in the white mountains. We currently track
 - Jackson
 - Mt Mansfield
 
-Authors: [@nicknish2](https://github.com/nicknish2) and Milan Klöwer ([@milankl](https://github.com/milankl)), MIT.
+Authors: Paul Nicknish [@nicknish2](https://github.com/nicknish2) and Milan Klöwer ([@milankl](https://github.com/milankl)), MIT.
 
 ## Data
 
