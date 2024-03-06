@@ -66,6 +66,10 @@ for i in range(len(snowDepthClim)):
 
 # Plot the average
 plt.plot(range(1,366),averageSnowDepth,label='1930-2023 Average',linewidth=2,color='dodgerblue')
+
+# Plot the current season
+plt.plot(range(1,366),averageSnowDepth,label='2023-2024',linewidth=2,color='lime')
+
 plt.legend()
 
 plt.xticks([dayOfYear('2000-09-01')+122-365, dayOfYear('2000-10-01')+122-365,
