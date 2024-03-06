@@ -1,0 +1,4 @@
+! THESE DATA ARE UNOFFICIAL AND PROVISIONAL
+Station_Id|Name|Latitude|Longitude|Elevation|Physical_Element|DateTime_Report(UTC)|Amount|Units|Zip_Code|
+MMSV1|MOUNT MANSFIELD|44.53330|-72.83330|697 meters|snowdepth|2024-03-06 14|15.240|cm|05489|
+NCON3|NORTH CONWAY|44.05620|-71.12970|163 meters|snowdepth|2024-03-06 13|0.003|cm|03860|

@@ -15,10 +15,10 @@ stations = ["HERMIT LAKE",
             "MOUNT MANSFIELD",
             ]
 
-year = DateTime(2024)
+year = DateTime(2024,1,1,12)
 season_start = Day(-61)
 season_end = Day(150)
-frequency = Hour(6)
+frequency = Hour(24)
 
 timesteps_in_season = floor(Int,((year+season_end) - (year+season_start))/frequency)
 season = [year + season_start + i*frequency for i in 0:timesteps_in_season]
@@ -33,8 +33,10 @@ for date in season
     output_path = joinpath("data",yyyy,filename)
 
     success::Bool = false
+    body::Vector{SubString{String}} = []
     try
         r = HTTP.request("GET", fullpath)
+        body = split(String(r.body),"\n")
         success = true
     catch
         @info "HTTP request failed: $date was not available."
@@ -47,7 +49,6 @@ for date in season
             nothing
         end
         txtfile = open(output_path,"w")
-        body = split(String(r.body),"\n")
 
         # print header
         for line in body[1:2]
