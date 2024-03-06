@@ -54,14 +54,15 @@ currentSeasonSnowDepth = np.array([])
 currentSeasonDates = np.array([])
 
 stationsOfInterest = ['PINKHAM NOTCH']
+currYear = '2024'
 
-dir_path = '/Users/paulnicknish/Desktop/pinkhamNotchStuff/dailyTestData/*.txt' # path with the daily downloads of data, select the 12Z (morning EST)
+dir_path = '/PinkSnow/data/' + currYear + '/*12.txt' # path with the daily downloads of data, select the 12Z (morning EST)
 for ifile,file in enumerate(glob.glob(dir_path, recursive=False)):
     currentSnowDepth,currentDateString = snowpackOnDate(stationsOfInterest[0],file)
     currentSeasonSnowDepth = np.append(currentSeasonSnowDepth,currentSnowDepth)
     currentSeasonDates = np.append(currentSeasonDates,dayOfYear(currentDateString))
     
 # Save
-pathToSave = ''
+pathToSave = '/PinkSnow/data/'
 np.save(pathToSave+'currentSeasonSnowDepth.npy',currentSeasonSnowDepth)
 np.save(pathToSave+'currentSeasonDates.npy',currentSeasonDates)
