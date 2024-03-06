@@ -1,19 +1,7 @@
-using HTTP, Dates, Printf
+using HTTP, TOML, Dates, Printf
+stations = TOML.parse(open("data/stations.toml"))["stations"]
 
 path = "https://www.nohrsc.noaa.gov/nsa/discussions_text/Northeast/snowdepth/"
-stations = ["HERMIT LAKE", 
-            "MOUNT WASHINGTON",
-            "HARVARD CABIN",
-            "CARTER NOTCH",
-            "ZEALAND FALLS HUT",
-            "LONESOME LAKE HUT",
-            "GROTON",
-            "CRAWFORD NOTCH",
-            "PINKHAM NOTCH",
-            "JACKSON",
-            "NORTH CONWAY",
-            "MOUNT MANSFIELD",
-            ]
 
 year = DateTime(2024,1,1,12)
 season_start = Day(-61)
@@ -57,10 +45,9 @@ for date in season
 
         # print stations
         for line in body[3:end]
-            for station in stations
-                if occursin(station,line)
-                    println(txtfile,line)
-                end
+            id = split(line,"|")[1]
+            if id in stations
+                println(txtfile,line)
             end
         end
 
