@@ -37,15 +37,16 @@ def dayOfYear(date):
 # Load Data
 
 # Load Historical Pinkham Notch Data
-snowDepthClim_inCM = np.load('/Users/paulnicknish/Desktop/pinkhamNotchStuff/pinkhamSnowpackClim1930-2023_snowDepth_cm.npy')
-datesClim = np.load('/Users/paulnicknish/Desktop/pinkhamNotchStuff/pinkhamSnowpackClim1930-2023_endWinterYears_cm.npy')
+snowDepthClim_inCM = np.load('/PinkSnow/data/historical/pinkhamSnowpackClim1930-2023_snowDepth_cm.npy')
+datesClim = np.load('/PinkSnow/data/historical/pinkhamSnowpackClim1930-2023_endWinterYears_cm.npy')
 
 # Load the current year data
-currentYearSnowDepth_inCM = np.load()
-currentYearDates = np.load()
+currentYearSnowDepth_inCM = np.load('/PinkSnow/data/currentSeasonSnowDepth.npy')
+currentYearDates = np.load('/PinkSnow/data/currentSeasonDates.npy')
 
 # Convert to Inches
 snowDepthClim_inIn = snowDepthClim_inCM/2.54
+currentYearSnowDepth_inIN = currentYearSnowDepth_inCM/2.54
 
 # Calculate Average
 averageSnowDepth = np.nanmean(snowDepthClim_inIn,axis=0)
