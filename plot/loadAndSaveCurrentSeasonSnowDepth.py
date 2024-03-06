@@ -5,6 +5,7 @@ import pandas as pd
 import copy
 import glob
 
+% DONT SAVE OUT NPY FILE, pass diectly to plotter
 
 # Function that returns the snow depth in cm and the date (as a string)
 # for a given station name and datafile corresponding to a specific day
