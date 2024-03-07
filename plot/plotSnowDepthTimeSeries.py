@@ -54,7 +54,7 @@ dir_path = '/PinkSnow/data/*/*.txt' # path with the daily downloads of data, sel
 
 for ifile,file in enumerate(glob.glob(dir_path, recursive=True)):
     currentSnowDepth,currentDateString = snowpackOnDate(stationsOfInterest[0],file)
-    currentSeasonSnowDepth_inCM = np.append(currentSeasonSnowDepth,currentSnowDepth)
+    currentSeasonSnowDepth_inCM = np.append(currentSeasonSnowDepth_inCM,currentSnowDepth)
     currentSeasonDates = np.append(currentSeasonDates,dayOfYear(currentDateString))
 
 # Load Historical Pinkham Notch Data
