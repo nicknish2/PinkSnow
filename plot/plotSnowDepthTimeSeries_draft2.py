@@ -212,4 +212,4 @@ today = date.today()
 d2 = today.strftime("%B %d, %Y")
 fig.suptitle(d2);
 
-plt.savefig('/PinkSnow/{}.png'.format(today.strftime("%b-%d-%Y"))
+plt.savefig('/PinkSnow/plot/images/{}.png'.format(today.strftime("%b-%d-%Y"))
