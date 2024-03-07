@@ -69,14 +69,14 @@ averageSnowDepth_inIN = np.nanmean(snowDepthClim_inIN,axis=0)
 datesForPlotting = np.arange(1,366)
 
 # Shading for historical plot
-n = len(snowDepthClim)
+n = len(snowDepthClim_inIN)
 colors = plt.cm.Greys(np.linspace(0,1,n))
 
-for i in range(len(snowDepthClim)):
+for i in range(len(snowDepthClim_inIN)):
     plt.plot(datesForPlotting,snowDepthClim_inIN[i],c=colors[i],linewidth = .5)
 
 # Plot the average
-plt.plot(range(1,366),averageSnowDepth,label='1930-2023 Average',linewidth=2,color='dodgerblue')
+plt.plot(range(1,366),averageSnowDepth_inIN,label='1930-2023 Average',linewidth=2,color='dodgerblue')
 
 # Plot the current season
 plt.plot(currentSeasonDates,currentSeasonSnowDepth_inIN,label='2023-2024',linewidth=2,color='lime')
