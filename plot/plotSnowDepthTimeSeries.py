@@ -35,7 +35,7 @@ def dayOfYear(date):
     return day;
 
 
-# Load Data
+### Load Data ###
 
 # Load Historical Pinkham Notch Data
 snowDepthClim_inCM = np.load('/PinkSnow/data/historical/pinkhamSnowpackClim1930-2023_snowDepth_cm.npy')
