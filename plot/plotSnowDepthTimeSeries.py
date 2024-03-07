@@ -34,6 +34,13 @@ def dayOfYear(date):
         month -= 1;
     return day;
 
+# Function used to load current year data
+def snowpackOnDate(stationName,dataPath):
+    dataOnDate = pd.read_csv(dataPath, sep = "|",header=1)
+    snowpack = dataOnDate[dataOnDate.Name == stationName].Amount.values[0]
+    dateString = dataOnDate[dataOnDate.Name == stationName]['DateTime_Report(UTC)'].values[0][:-3]
+    return snowpack,dateString
+
 
 ### Load Data ###
 
