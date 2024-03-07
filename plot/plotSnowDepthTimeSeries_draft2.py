@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import copy
 import glob
+from datetime import date
 
 # Function to return the day number
 # of the year for the given date
@@ -206,3 +207,9 @@ ax2.set_ylabel('Inches of Snow')
 
 ax2.set_title('Pinkham Notch Snowpack')
 ax2.set_ylim([0, 80])
+
+today = date.today()
+d2 = today.strftime("%B %d, %Y")
+fig.suptitle(d2);
+
+plt.savefig('/PinkSnow/{}.png'.format(today.strftime("%b-%d-%Y"))
