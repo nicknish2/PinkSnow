@@ -37,20 +37,30 @@ def dayOfYear(date):
 
 ### Load Data ###
 
+# Load data for the current year
+currentSeasonSnowDepth_inCM = np.array([])
+currentSeasonDates = np.array([])
+
+stationsOfInterest = ['PINKHAM NOTCH']
+
+dir_path = '/PinkSnow/data/*/*.txt' # path with the daily downloads of data, select the 12Z (morning EST)
+
+for ifile,file in enumerate(glob.glob(dir_path, recursive=True)):
+    currentSnowDepth,currentDateString = snowpackOnDate(stationsOfInterest[0],file)
+    currentSeasonSnowDepth_inCM = np.append(currentSeasonSnowDepth,currentSnowDepth)
+    currentSeasonDates = np.append(currentSeasonDates,dayOfYear(currentDateString))
+
 # Load Historical Pinkham Notch Data
 snowDepthClim_inCM = np.load('/PinkSnow/data/historical/pinkhamSnowpackClim1930-2023_snowDepth_cm.npy')
 datesClim = np.load('/PinkSnow/data/historical/pinkhamSnowpackClim1930-2023_endWinterYears_cm.npy')
 
-# Load the current year data
-currentYearSnowDepth_inCM = np.load('/PinkSnow/data/currentSeasonSnowDepth.npy')
-currentYearDates = np.load('/PinkSnow/data/currentSeasonDates.npy')
 
 # Convert to Inches
-snowDepthClim_inIn = snowDepthClim_inCM/2.54
-currentYearSnowDepth_inIN = currentYearSnowDepth_inCM/2.54
+snowDepthClim_inIN = snowDepthClim_inCM/2.54
+currentSeasonSnowDepth_inIN = currentSeasonSnowDepth_inCM/2.54
 
 # Calculate Average
-averageSnowDepth = np.nanmean(snowDepthClim_inIn,axis=0)
+averageSnowDepth_inIN = np.nanmean(snowDepthClim_inIN,axis=0)
 
 ### Make the plot ###
 
@@ -63,13 +73,13 @@ n = len(snowDepthClim)
 colors = plt.cm.Greys(np.linspace(0,1,n))
 
 for i in range(len(snowDepthClim)):
-    plt.plot(datesForPlotting,snowDepthClim_inIn[i],c=colors[i],linewidth = .5)
+    plt.plot(datesForPlotting,snowDepthClim_inIN[i],c=colors[i],linewidth = .5)
 
 # Plot the average
 plt.plot(range(1,366),averageSnowDepth,label='1930-2023 Average',linewidth=2,color='dodgerblue')
 
 # Plot the current season
-plt.plot(range(1,366),averageSnowDepth,label='2023-2024',linewidth=2,color='lime')
+plt.plot(currentSeasonDates,currentSeasonSnowDepth_inIN,label='2023-2024',linewidth=2,color='lime')
 
 plt.legend()
 
