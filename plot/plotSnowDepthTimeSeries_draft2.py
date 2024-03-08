@@ -168,7 +168,7 @@ ax1.set_xticks([dayOfYear('2000-09-01')+122-365, dayOfYear('2000-10-01')+122-365
 
 ax1.set_ylabel('Inches of Snow')
 ax1.set_ylim([0, 80])
-ax1.set_title('New England Snowpack')
+ax1.set_title('Snowpack from Around New England')
 
 ## Plot Pinkham Notch Data and climatology ##
 
