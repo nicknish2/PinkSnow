@@ -83,7 +83,7 @@ currentSeasonDatesDict = {}
 for stat in availableStations:
     currentSeasonDatesDict[stat] = np.array([])
 
-dir_path = '../../data/2024/*.txt' # path with the daily downloads of data, select the 12Z (morning EST)
+dir_path = 'data/2024/*.txt' # path with the daily downloads of data, select the 12Z (morning EST)
 
 for ifile,file in enumerate(glob.glob(dir_path, recursive=True)):
     currentSeasonSnowDepthDict_inCM,currentSeasonDatesDict = snowpackOnDate(availableStations,file,
@@ -111,8 +111,8 @@ if addNANs:
     
 # Load Historical Pinkham Notch Data
 lastYearInClimatology = currentYear-1
-snowDepthClim_inCM = np.load('../../data/historical/pinkhamSnowpackClim1930-{}_snowDepth_cm.npy'.format(lastYearInClimatology))
-datesClim = np.load('../../data/historical/pinkhamSnowpackClim1930-{}_endWinterYears_cm.npy'.format(lastYearInClimatology))
+snowDepthClim_inCM = np.load('data/historical/pinkhamSnowpackClim1930-{}_snowDepth_cm.npy'.format(lastYearInClimatology))
+datesClim = np.load('data/historical/pinkhamSnowpackClim1930-{}_endWinterYears_cm.npy'.format(lastYearInClimatology))
 
 
 # Convert to Inches
@@ -209,4 +209,4 @@ stringForTextBox = 'On this date:'+ '\nAverage Snowpack: {} \nCurrent Season: {}
 ax1.text(0.05, 0.95, stringForTextBox, transform=ax1.transAxes, fontsize=10,
         verticalalignment='top');
 
-plt.savefig('../images/pinkhamNotchSnowpack{}.png'.format(today.strftime("%b-%d-%Y")))
+plt.savefig('plot/images/pinkhamNotchSnowpack{}.png'.format(today.strftime("%b-%d-%Y")))
