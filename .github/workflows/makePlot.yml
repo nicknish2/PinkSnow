@@ -2,7 +2,7 @@ name: plot-snowpack
 
 on:
   schedule:
-    - cron: '0 17 * * *'
+    - cron: '0 22 * * *'
 
 jobs:
   build:
