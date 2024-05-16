@@ -209,4 +209,4 @@ stringForTextBox = 'On this date:'+ '\nAverage Snowpack: {} \nCurrent Season: {}
 ax1.text(0.05, 0.95, stringForTextBox, transform=ax1.transAxes, fontsize=10,
         verticalalignment='top');
 
-plt.savefig('pinkhamNotchSnowpack{}.png'.format(today.strftime("%b-%d-%Y"))
+plt.savefig('../images/pinkhamNotchSnowpack{}.png'.format(today.strftime("%b-%d-%Y")))
