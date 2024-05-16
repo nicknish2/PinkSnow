@@ -83,7 +83,7 @@ currentSeasonDatesDict = {}
 for stat in availableStations:
     currentSeasonDatesDict[stat] = np.array([])
 
-dir_path = '/Users/paulnicknish/Desktop/pinkhamNotchStuff/gitHubTesting/PinkSnow-main/data/2024/*.txt' # path with the daily downloads of data, select the 12Z (morning EST)
+dir_path = '../../data/2024/*.txt' # path with the daily downloads of data, select the 12Z (morning EST)
 
 for ifile,file in enumerate(glob.glob(dir_path, recursive=True)):
     currentSeasonSnowDepthDict_inCM,currentSeasonDatesDict = snowpackOnDate(availableStations,file,
@@ -111,8 +111,8 @@ if addNANs:
     
 # Load Historical Pinkham Notch Data
 lastYearInClimatology = currentYear-1
-snowDepthClim_inCM = np.load('/Users/paulnicknish/Desktop/pinkhamNotchStuff/gitHubTesting/PinkSnow-main/data/historical/pinkhamSnowpackClim1930-{}_snowDepth_cm.npy'.format(lastYearInClimatology))
-datesClim = np.load('/Users/paulnicknish/Desktop/pinkhamNotchStuff/gitHubTesting/PinkSnow-main/data/historical/pinkhamSnowpackClim1930-{}_endWinterYears_cm.npy'.format(lastYearInClimatology))
+snowDepthClim_inCM = np.load('../../data/historical/pinkhamSnowpackClim1930-{}_snowDepth_cm.npy'.format(lastYearInClimatology))
+datesClim = np.load('../../data/historical/pinkhamSnowpackClim1930-{}_endWinterYears_cm.npy'.format(lastYearInClimatology))
 
 
 # Convert to Inches
