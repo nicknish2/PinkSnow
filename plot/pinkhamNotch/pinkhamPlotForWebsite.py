@@ -90,7 +90,7 @@ for ifile,file in enumerate(glob.glob(dir_path, recursive=True)):
                                                                             currentSeasonSnowDepthDict_inCM,currentSeasonDatesDict)
 
 # Make it so that currentSeasonDatesDict has Sept 1 as day 1
-adjustToSept1 = 121 # want sept 1 to be day 1
+adjustToSept1 = 122 # want sept 1 to be day 1
 currentSeasonDatesDict = {i:currentSeasonDatesDict[i]+adjustToSept1 for i in currentSeasonDatesDict.keys()}
 for name in availableStations: 
     currVal = currentSeasonDatesDict[name]
@@ -135,7 +135,7 @@ for name in availableStations:
 fig, (ax1) = plt.subplots(1, 1,figsize=(8, 5),dpi=300)
 
 dayOfYear_startFromJan1 = date.today().timetuple().tm_yday
-if dayOfYear_startFromJan1 > 245:
+if dayOfYear_startFromJan1 > 244:
     dayOfYear_startFromSept1 = dayOfYear_startFromJan1 + adjustToSept1 - 365
 else:
     dayOfYear_startFromSept1 = dayOfYear_startFromJan1 + adjustToSept1
@@ -185,8 +185,8 @@ for i in range(highlightLastNYears):
     
 # Format Figure
 ax1.legend()
-ax1.set_xticks([dayOfYear('2000-09-01')+adjustToSept1-365, dayOfYear('2000-10-01')+adjustToSept1-365,
-            dayOfYear('2000-11-01')+adjustToSept1-365, dayOfYear('2000-12-01')+adjustToSept1-365,
+ax1.set_xticks([dayOfYear('2001-09-01')+adjustToSept1-365, dayOfYear('2001-10-01')+adjustToSept1-365,
+            dayOfYear('2001-11-01')+adjustToSept1-365, dayOfYear('2001-12-01')+adjustToSept1-365,
             dayOfYear('2001-01-01')+adjustToSept1, dayOfYear('2001-02-01')+adjustToSept1,
             dayOfYear('2001-03-01')+adjustToSept1, dayOfYear('2001-04-01')+adjustToSept1,
             dayOfYear('2001-05-01')+adjustToSept1, dayOfYear('2000-06-01')+adjustToSept1,
