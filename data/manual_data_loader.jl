@@ -5,6 +5,7 @@ stations = TOML.parse(open("data/stations.toml"))["stations"]
 
 path = "https://www.nohrsc.noaa.gov/nsa/discussions_text/Northeast/snowdepth/"
 
+# change the following line to select a different season
 year = DateTime(2024,1,1,12)
 season_start = Day(-61)
 season_end = Day(150)
