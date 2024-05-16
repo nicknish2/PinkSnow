@@ -8,4 +8,4 @@ jobs:
       - uses: julia-actions/setup-julia@v2
         with:
           version: '1.10'
-      - run: julia /nicknish2/PinkSnow/data/manual_data_loader.jl
+      - run: julia '/nicknish2/PinkSnow/data/manual_data_loader.jl'
