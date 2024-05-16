@@ -1,3 +1,5 @@
+import Pkg; Pkg.add("HTTP")
+
 using HTTP, TOML, Dates, Printf
 stations = TOML.parse(open("data/stations.toml"))["stations"]
 
