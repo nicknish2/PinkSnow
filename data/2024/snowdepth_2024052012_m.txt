@@ -1,0 +1,4 @@
+! THESE DATA ARE UNOFFICIAL AND PROVISIONAL
+Station_Id|Name|Latitude|Longitude|Elevation|Physical_Element|DateTime_Report(UTC)|Amount|Units|Zip_Code|
+NH-CR-46|NORTH CONWAY 1.8 SSE, NH|44.02955|-71.11664|170 meters|snowdepth|2024-05-19 14|0.000|cm|03860|
+MMSV1|MOUNT MANSFIELD|44.53330|-72.83330|697 meters|snowdepth|2024-05-19 13|0.000|cm|05489|
