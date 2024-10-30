@@ -1,2 +1,5 @@
 ! THESE DATA ARE UNOFFICIAL AND PROVISIONAL
 Station_Id|Name|Latitude|Longitude|Elevation|Physical_Element|DateTime_Report(UTC)|Amount|Units|Zip_Code|
+KMWN|MOUNT WASHINGTON|44.26666|-71.30000|1715 meters|snowdepth|2024-10-30 18|2.540|cm|00176|
+MMSV1|MOUNT MANSFIELD|44.53330|-72.83330|697 meters|snowdepth|2024-10-30 19|0.000|cm|05489|
+GKBN3|GRAY KNOB|44.33260|-71.30930|1329 meters|snowdepth|2024-10-30 16|0.000|cm|00181|
