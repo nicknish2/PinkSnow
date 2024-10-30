@@ -74,11 +74,11 @@ yearRange = np.arange(1930,lastYearInClimData+1)
 
 ### Pinkham Notch Data ###
 
-lastYearInClimData = 2023;
+lastYearInClimData = 2024;
 # Note that a "new year" starts on Sept 1
 
 # Data is originally in inches!
-dataPath = '/Users/paulnicknish/Desktop/pinkhamNotchStuff/1930Through{}.csv'.format(lastYearInClimData)
+dataPath = 'pinkham1930_2024_rawData.csv'.format(lastYearInClimData)
 
 ### Read in the data ###
 data = pd.read_csv(dataPath)

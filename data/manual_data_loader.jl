@@ -5,8 +5,15 @@ stations = TOML.parse(open("data/stations.toml"))["stations"]
 
 path = "https://www.nohrsc.noaa.gov/nsa/discussions_text/Northeast/snowdepth/"
 
-# change the following line to select a different season
-year = DateTime(2024,1,1,12)
+# get the current year
+todaysDate = string(Dates.today())
+currYear = parse(Float64,todaysDate[1:4])
+currMonth = parse(Float64,todaysDate[6:7])
+if currMonth>9
+    currYear = currYear + 1
+end
+
+year = DateTime(currYear,1,1,12)
 season_start = Day(-61)
 season_end = Day(150)
 frequency = Hour(24)

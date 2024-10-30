@@ -7,6 +7,7 @@ import pandas as pd
 import copy
 import glob
 from datetime import date
+from datetime import datetime
 
 ### Define Functions ###
 
@@ -62,7 +63,10 @@ def historicSeasonStrings(seasonStrings,snowDepth):
 
 
 ### Load Data ###
-currentYear = 2024
+currentYear = datetime.now().year
+currentMonth = datetime.now().month
+if currentMonth>9:
+    currentYear = currentYear + 1
 
 # Available Stations
 #availableStations = ['HVCN3','HTLN3','GKBN3','CRNN3','KMWN','ZFHN3',
@@ -83,7 +87,7 @@ currentSeasonDatesDict = {}
 for stat in availableStations:
     currentSeasonDatesDict[stat] = np.array([])
 
-dir_path = 'data/2024/*.txt' # path with the daily downloads of data, select the 12Z (morning EST)
+dir_path = 'data/{}/*.txt'.format(currentYear) # path with the daily downloads of data, select the 12Z (morning EST)
 
 for ifile,file in enumerate(glob.glob(dir_path, recursive=True)):
     currentSeasonSnowDepthDict_inCM,currentSeasonDatesDict = snowpackOnDate(availableStations,file,
@@ -209,5 +213,7 @@ stringForTextBox = 'On this date:'+ '\nAverage Snowpack: {} \nCurrent Season: {}
 ax1.text(0.05, 0.95, stringForTextBox, transform=ax1.transAxes, fontsize=10,
         verticalalignment='top');
 
-plt.savefig('plot/images/pinkhamNotchSnowpack{}.png'.format(today.strftime("%b-%d-%Y")))
+# Save the figure
+
+#plt.savefig('plot/images/pinkhamNotchSnowpack{}.png'.format(today.strftime("%b-%d-%Y")))
 plt.savefig('plot/images/pinkhamNotchSnowpackTODAY.png')
