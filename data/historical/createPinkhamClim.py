@@ -75,7 +75,7 @@ lastYearInClimData = 2024;
 # Note that a "new year" starts on Sept 1
 
 # Data is originally in inches!
-dataPath = 'pinkham1930_2024_rawData.csv'.format(lastYearInClimData)
+dataPath = 'data/historical/pinkham1930_{}_rawData.csv'.format(lastYearInClimData)
 
 ### Read in the data ###
 data = pd.read_csv(dataPath)
