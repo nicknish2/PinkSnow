@@ -153,5 +153,5 @@ pinkhamSnowpackClim_incm = pinkhamSnowpackClim*2.54
 
 ### Save the data ###
 
-np.save('pinkhamSnowpackClim1930-{}_snowDepth_cm.npy'.format(lastYearInClimData),pinkhamSnowpackClim_incm)
-np.save('pinkhamSnowpackClim1930-{}_endWinterYears_cm.npy'.format(lastYearInClimData),np.arange(1930,lastYearInClimData+1))
+np.save('data/historical/pinkhamSnowpackClim1930-{}_snowDepth_cm.npy'.format(lastYearInClimData),pinkhamSnowpackClim_incm)
+np.save('data/historical/pinkhamSnowpackClim1930-{}_endWinterYears_cm.npy'.format(lastYearInClimData),np.arange(1930,lastYearInClimData+1))
