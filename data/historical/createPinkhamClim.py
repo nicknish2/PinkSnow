@@ -68,9 +68,6 @@ def findYearIndices(startYear,endYear,dates):
         yearIndices = yearIndices + [currYearIndices]
     return yearIndices
 
-indicesByYear = findYearIndices(1930,lastYearInClimData+1,dates)
-yearRange = np.arange(1930,lastYearInClimData+1)
-
 
 ### Pinkham Notch Data ###
 
@@ -85,6 +82,9 @@ data = pd.read_csv(dataPath)
 
 dates = data.DATE.to_numpy()
 snowDepth = data.SNWD.to_numpy()
+
+indicesByYear = findYearIndices(1930,lastYearInClimData+1,dates)
+yearRange = np.arange(1930,lastYearInClimData+1)
 
 ### Select the snow depth in each year ###
 
