@@ -14,7 +14,7 @@ if currMonth>9
 end
 
 year = DateTime(currYear,1,1,12)
-season_start = Day(-61)
+season_start = Day(-76) # mid Oct
 season_end = Day(150)
 frequency = Hour(24)
 
