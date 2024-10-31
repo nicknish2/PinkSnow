@@ -46,12 +46,12 @@ def dayOfYear(date):
         month -= 1;
     return day;
 
-# Find the indices in the data corresponding to each year (1930-lastYearInClimData)
+# Find the indices in the data corresponding to each year (2021-lastYearInClimData)
     # we want to track winter seasons, thus the year will be defined from Sept to Sept
     
 def findYearIndices(startYear,endYear,dates):
     # Start and end year correspond to the year in the spring of the winter
-    # The first data point is in Jan 1930, so the start year is 1930
+    # The first data point is in Jan 2021, so the start year is 2021
     # ex. a start of year of 2001 would start with the winter season of 2000-2001
     # inclusive of endYear
     
@@ -69,13 +69,13 @@ def findYearIndices(startYear,endYear,dates):
     return yearIndices
 
 
-### Pinkham Notch Data ###
+### Crawford Notch Data ###
 
 lastYearInClimData = 2024;
 # Note that a "new year" starts on Sept 1
 
 # Data is originally in inches!
-dataPath = 'data/historical/pinkham1930_{}_rawData.csv'.format(lastYearInClimData)
+dataPath = 'data/historical/crawfordNotch/crawfordRawData.csv'
 
 ### Read in the data ###
 data = pd.read_csv(dataPath)
@@ -83,8 +83,8 @@ data = pd.read_csv(dataPath)
 dates = data.DATE.to_numpy()
 snowDepth = data.SNWD.to_numpy()
 
-indicesByYear = findYearIndices(1930,lastYearInClimData+1,dates)
-yearRange = np.arange(1930,lastYearInClimData+1)
+indicesByYear = findYearIndices(2021,lastYearInClimData+1,dates)
+yearRange = np.arange(2021,lastYearInClimData+1)
 
 ### Select the snow depth in each year ###
 
@@ -105,7 +105,7 @@ for iy in range(len(datesByWinter)):
         if datesByWinter[iy][iday]>365 and datesByWinter[iy][iday] != datesByWinter[iy][-1]:
             datesByWinter[iy][iday] = datesByWinter[iy][iday]-365
             
-### Calculate the average over the years (1930-lastYearInClimData) ###
+### Calculate the average over the years (2021-lastYearInClimData) ###
 
 dayAverageSnowDepth = []
 for day in range(1,366):
@@ -120,11 +120,11 @@ for day in range(1,366):
     
 ### Fill in the missing days in each year with NAN ###
 
-# We have seasons ending in year 1930-lastYearInClimData
-pinkhamSnowpackClim = np.empty((len(range(1930,lastYearInClimData+1)),365))
+# We have seasons ending in year 2021-lastYearInClimData
+crawfordSnowpackClim = np.empty((len(range(2021,lastYearInClimData+1)),365))
 
-for yi in range(len(range(1930,lastYearInClimData+1))):
-    year = 1930+yi
+for yi in range(len(range(2021,lastYearInClimData+1))):
+    year = 2021+yi
     datesByWinterInThatYear = datesByWinter[yi]
     snowByWinterInThatYear = snowDepthByYears[yi]
     if CheckLeap(year):
@@ -145,13 +145,13 @@ for yi in range(len(range(1930,lastYearInClimData+1))):
     if len(snowByWinterInThatYearNew) == 366:
         snowByWinterInThatYearNew = snowByWinterInThatYearNew[:-1] # cut off leap days
     
-    pinkhamSnowpackClim[yi,:] = snowByWinterInThatYearNew
+    crawfordSnowpackClim[yi,:] = snowByWinterInThatYearNew
     
 # Convert to cm
-pinkhamSnowpackClim_incm = pinkhamSnowpackClim*2.54
+crawfordSnowpackClim_incm = crawfordSnowpackClim*2.54
 
 
 ### Save the data ###
 
-np.save('data/historical/pinkhamSnowpackClim1930-{}_snowDepth_cm.npy'.format(lastYearInClimData),pinkhamSnowpackClim_incm)
-np.save('data/historical/pinkhamSnowpackClim1930-{}_endWinterYears_cm.npy'.format(lastYearInClimData),np.arange(1930,lastYearInClimData+1))
+np.save('data/historical/crawfordNotch/crawfordSnowpackClim2021-{}_snowDepth_cm.npy'.format(lastYearInClimData),crawfordSnowpackClim_incm)
+np.save('data/historical/crawfordNotch/crawfordSnowpackClim2021-{}_endWinterYears_cm.npy'.format(lastYearInClimData),np.arange(2021,lastYearInClimData+1))
