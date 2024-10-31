@@ -1,8 +1,8 @@
 name: makeClim
 
-on: push
-   #schedule:
-   # - cron: '1 * 1 10 *'
+on: #push
+   schedule:
+    - cron: '1 * 1 10 *'
 
 jobs:
   build:
