@@ -1,8 +1,8 @@
 name: plot-snowpack
 
-on:
- schedule:
-   - cron: '0 22 * * *'
+on: push
+ # schedule:
+  # - cron: '0 22 * * *'
 
 jobs:
   build:
@@ -25,7 +25,9 @@ jobs:
       - name: execute py script # run main.py
         env:
           SOME_SECRET: ${{ secrets.SOME_SECRET }}
-        run: python plot/pinkhamNotch/pinkhamPlotForWebsite.py
+        run: | 
+           python plot/pinkhamNotch/pinkhamPlotForWebsite.py 
+           python plot/crawfordNotch/crawfordPlotForWebsite.py
           
       - name: commit files
         run: |
