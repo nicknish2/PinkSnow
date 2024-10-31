@@ -1,8 +1,8 @@
 name: makeClim
 
-on: 
-   schedule:
-    - cron: '1 * 1 10 *'
+on: push
+   #schedule:
+   # - cron: '1 * 1 10 *'
 
 jobs:
   build:
@@ -25,7 +25,7 @@ jobs:
       - name: execute py script # run main.py
         env:
           SOME_SECRET: ${{ secrets.SOME_SECRET }}
-        run: python data/historical/createPinkhamClim.py
+        run: python data/historical/crawfordNotch/createCrawfordClim.py
           
       - name: commit files
         run: |
