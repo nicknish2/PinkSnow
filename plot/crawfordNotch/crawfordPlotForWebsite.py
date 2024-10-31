@@ -75,8 +75,8 @@ if currentMonth>9:
 #                     'NH-CS-19','NH-CR-46','NH-BK-26','NH-CR-46','NH-GR-47','WENN3',
 #                     'NH-BK-9','MMNV1','MMSV1','NH-GR-11']
 
-# Load Pinkham Notch Data
-availableStations = ['GHMN3']
+# Load Crawford Notch Data
+availableStations = ['CAWN3']
 
 # Load data for the current year
 currentSeasonSnowDepthDict_inCM = {}
@@ -113,10 +113,10 @@ if addNANs:
                 currentSeasonDatesDict[stat] = np.append(currentSeasonDatesDict[stat],d)
                 currentSeasonSnowDepthDict_inCM[stat] = np.append(currentSeasonSnowDepthDict_inCM[stat],np.nan)
     
-# Load Historical Pinkham Notch Data
+# Load Historical Crawford Notch Data
 lastYearInClimatology = currentYear-1
-snowDepthClim_inCM = np.load('data/historical/pinkhamNotch/pinkhamSnowpackClim1930-{}_snowDepth_cm.npy'.format(lastYearInClimatology))
-datesClim = np.load('data/historical/pinkhamNotch/pinkhamSnowpackClim1930-{}_endWinterYears_cm.npy'.format(lastYearInClimatology))
+snowDepthClim_inCM = np.load('data/historical/crawfordNotch/crawfordSnowpackClim2021-{}_snowDepth_cm.npy'.format(lastYearInClimatology))
+datesClim = np.load('data/historical/crawfordNotch/crawfordSnowpackClim2021-{}_endWinterYears_cm.npy'.format(lastYearInClimatology))
 
 
 # Convert to Inches
@@ -145,7 +145,7 @@ else:
     dayOfYear_startFromSept1 = dayOfYear_startFromJan1 + adjustToSept1
 
 
-## Plot Pinkham Notch Data and climatology ##
+## Plot Crawford Notch Data and climatology ##
 
 # Put all of these years on a plot
 datesForPlotting = np.arange(1,366) # day 1 is Sept 1
@@ -159,15 +159,15 @@ for i in range(len(snowDepthClim_inIN)):
     ax1.plot(datesForPlotting,snowDepthClim_inIN[i],c=colors[i],linewidth = .25,alpha = .3,zorder=0)
 
 # Plot the average
-ax1.plot(datesForPlotting,averageSnowDepth_inIN,label='1930-{} Climatology'.format(lastYearInClimatology),linewidth=2,color='k',zorder=1)
+ax1.plot(datesForPlotting,averageSnowDepth_inIN,label='2021-{} Climatology'.format(lastYearInClimatology),linewidth=2,color='k',zorder=1)
 # Get the average snow depth on today's date
 averageSnowDepthToday = averageSnowDepth_inIN[dayOfYear_startFromSept1-1] # minus 1 because day 1 is index 0
 
-# Plot the current season in Pinkham Notch
-pinkhamNotchCode = 'GHMN3'
-ax1.plot(currentSeasonDatesDict[pinkhamNotchCode],currentSeasonSnowDepthDict_inIN[pinkhamNotchCode],label='{}-{}'.format(lastYearInClimatology,lastYearInClimatology+1),linewidth=2,color='red',zorder=10)
+# Plot the current season in Crawford Notch
+crawfordNotchCode = 'CAWN3'
+ax1.plot(currentSeasonDatesDict[crawfordNotchCode],currentSeasonSnowDepthDict_inIN[crawfordNotchCode],label='{}-{}'.format(lastYearInClimatology,lastYearInClimatology+1),linewidth=2,color='red',zorder=10)
 # get the current seasonal snowpack on this date
-currentSeasonSnowDepthToday = currentSeasonSnowDepthDict_inIN[pinkhamNotchCode][currentSeasonDatesDict[pinkhamNotchCode]==dayOfYear_startFromSept1]
+currentSeasonSnowDepthToday = currentSeasonSnowDepthDict_inIN[crawfordNotchCode][currentSeasonDatesDict[crawfordNotchCode]==dayOfYear_startFromSept1]
 if len(currentSeasonSnowDepthToday)==0:
     currentSeasonSnowDepthToday = 0.0
 else:
@@ -199,7 +199,7 @@ ax1.set_xticks([dayOfYear('2001-09-01')+adjustToSept1-365, dayOfYear('2001-10-01
 
 ax1.set_ylabel('Inches of Snow')
 
-ax1.set_title('Pinkham Notch Snowpack (in)')
+ax1.set_title('Crawford Notch Snowpack (in)')
 ax1.set_ylim([0, 80])
 
 today = date.today()
@@ -215,5 +215,4 @@ ax1.text(0.05, 0.95, stringForTextBox, transform=ax1.transAxes, fontsize=10,
 
 # Save the figure
 
-#plt.savefig('plot/images/pinkhamNotchSnowpack{}.png'.format(today.strftime("%b-%d-%Y")))
-plt.savefig('plot/images/pinkhamNotchSnowpackTODAY.png')
+plt.savefig('plot/images/crawfordNotchSnowpackTODAY.png')
