@@ -26,8 +26,7 @@ jobs:
         env:
           SOME_SECRET: ${{ secrets.SOME_SECRET }}
         run: | 
-           python plot/pinkhamNotch/pinkhamPlotForWebsite.py 
-           python plot/crawfordNotch/crawfordPlotForWebsite.py
+           python plot/makeDailyPlot.py
           
       - name: commit files
         run: |
