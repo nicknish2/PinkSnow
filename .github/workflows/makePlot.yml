@@ -1,8 +1,8 @@
 name: plot-snowpack
 
-on: push
- # schedule:
-  # - cron: '0 22 * * *'
+on: # push
+ schedule:
+  - cron: '0 22 * * *'
 
 jobs:
   build:
