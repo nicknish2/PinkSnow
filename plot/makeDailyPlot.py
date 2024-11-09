@@ -80,11 +80,11 @@ if currentMonth>9:
 
 # These are the stations with historical data available
 availableStationsDict = {'HTLN3':'hermitLake','CAWN3':'crawfordNotch','GHMN3':'pinkhamNotch',
-                         'KMWN':'mountWashington'}
+                         'MWN':'mountWashington','GKBN3':'grayKnob'}
 
 # Full names of the available stations
 availableStationsFullName = {'HTLN3':'Hermit Lake','CAWN3':'Crawford Notch','GHMN3':'Pinkham Notch',
-                         'KMWN':'Mount Washington'}
+                         'MWN':'Mount Washington','GKBN3':'Gray Knob'}
 ###########
 
 
