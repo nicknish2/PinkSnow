@@ -1,0 +1,5 @@
+! THESE DATA ARE UNOFFICIAL AND PROVISIONAL
+Station_Id|Name|Latitude|Longitude|Elevation|Physical_Element|DateTime_Report(UTC)|Amount|Units|Zip_Code|
+NH-BK-26|MEREDITH 3.3 NNE, NH|43.69844|-71.46930|276 meters|snowdepth|2024-11-16 13|0.000|cm|03226|
+MMSV1|MOUNT MANSFIELD|44.53330|-72.83330|697 meters|snowdepth|2024-11-16 18|0.000|cm|05489|
+GKBN3|GRAY KNOB|44.33260|-71.30930|1329 meters|snowdepth|2024-11-16 21|0.000|cm|00181|
