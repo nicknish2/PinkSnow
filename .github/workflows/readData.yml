@@ -2,7 +2,7 @@ name: read-data-from-web
 
 on:
   schedule:
-    - cron: '0 21 * * *' 
+    - cron: '0 6 * * *' 
     
 jobs:
   my-job:
