@@ -189,8 +189,12 @@ for stat in stationCodeList:
     if len(currentSeasonSnowDepthToday)==0:
         # first try getting yesterday's value, maybe the data just isn't loaded yet
         currentSeasonSnowDepthYesterday = currentSeasonSnowDepthDict_IN[stat][currentSeasonDatesDict[stat]==dayOfYear_startFromSept1-1]
-        if len(currentSeasonSnowDepthYesterday)==0: # if this doesn't work, set to 0
-            currentSeasonSnowDepthToday = 0.0
+        if len(currentSeasonSnowDepthYesterday)==0: # if this doesn't work, try the day before yesterday
+            currentSeasonSnowDepth2DaysAgo = currentSeasonSnowDepthDict_IN[stat][currentSeasonDatesDict[stat]==dayOfYear_startFromSept1-2]
+            if len(currentSeasonSnowDepth2DaysAgo)==0:
+                currentSeasonSnowDepthToday = "Not Reported"
+            else:
+                currentSeasonSnowDepthToday = currentSeasonSnowDepth2DaysAgo[0]
         else:
             currentSeasonSnowDepthToday = currentSeasonSnowDepthYesterday[0]
     else:
