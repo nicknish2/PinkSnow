@@ -1,9 +1,8 @@
 name: read-data-from-web
 
-on:
-  push
-  #schedule:
-   # - cron: '0 2 * * *' 
+on: # push
+  schedule:
+    - cron: '0 7 * * *' 
     
 jobs:
   my-job:
