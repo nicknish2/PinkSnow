@@ -236,7 +236,10 @@ for stat in stationCodeList:
 
     # Make Text box
 
-    stringForTextBox = 'On this date:'+ '\nAverage Snowpack: {} \nCurrent Season: {} \n'.format(round(averageSnowDepthToday,1),round(currentSeasonSnowDepthToday,1)) + historicSeasonStrings(seasonsToShow,trackHistoricSnowDepthOnCurrDay);
+    if currentSeasonSnowDepthToday == 'Not Reported':
+        stringForTextBox = 'On this date:'+ '\nAverage Snowpack: {} \nCurrent Season: {} \n'.format(round(averageSnowDepthToday,1),currentSeasonSnowDepthToday) + historicSeasonStrings(seasonsToShow,trackHistoricSnowDepthOnCurrDay);
+    else:
+        stringForTextBox = 'On this date:'+ '\nAverage Snowpack: {} \nCurrent Season: {} \n'.format(round(averageSnowDepthToday,1),round(currentSeasonSnowDepthToday,1)) + historicSeasonStrings(seasonsToShow,trackHistoricSnowDepthOnCurrDay);
 
     ax1.text(0.05, 0.95, stringForTextBox, transform=ax1.transAxes, fontsize=10,
             verticalalignment='top');
