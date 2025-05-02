@@ -1,0 +1,5 @@
+! THESE DATA ARE UNOFFICIAL AND PROVISIONAL
+Station_Id|Name|Latitude|Longitude|Elevation|Physical_Element|DateTime_Report(UTC)|Amount|Units|Zip_Code|
+MMNV1|MT. MANSFIELD|44.52480|-72.81540|1190 meters|snowdepth|2025-05-01 20|127.000|cm|05672|
+MMSV1|MOUNT MANSFIELD|44.53330|-72.83330|697 meters|snowdepth|2025-05-02 05|0.000|cm|05489|
+HUBN3|HUBBARD BROOK|43.93330|-71.71670|489 meters|snowdepth|2025-05-02 05|0.000|cm|03223|
