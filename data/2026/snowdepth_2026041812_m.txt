@@ -1,0 +1,4 @@
+! THESE DATA ARE UNOFFICIAL AND PROVISIONAL
+Station_Id|Name|Latitude|Longitude|Elevation|Physical_Element|DateTime_Report(UTC)|Amount|Units|Zip_Code|
+MMNV1|MT. MANSFIELD|44.52480|-72.81540|1190 meters|snowdepth|2026-04-17 20|99.060|cm|05672|
+MMSV1|MOUNT MANSFIELD|44.53330|-72.83330|697 meters|snowdepth|2026-04-18 04|0.000|cm|05489|
