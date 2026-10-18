@@ -1,0 +1,4 @@
+! THESE DATA ARE UNOFFICIAL AND PROVISIONAL
+Station_Id|Name|Latitude|Longitude|Elevation|Physical_Element|DateTime_Report(UTC)|Amount|Units|Zip_Code|
+KMWN|MOUNT WASHINGTON|44.26666|-71.30000|1715 meters|snowdepth|2026-10-18 06|2.540|cm|00176|
+ESDN3|EAST SANDWICH|43.80990|-71.34250|224 meters|snowdepth|2026-10-18 10|0.000|cm|03227|
